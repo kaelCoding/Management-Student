@@ -1,0 +1,2 @@
+getDataStudent()
+renderStudents(students)

@@ -1,0 +1,21 @@
+
+table, tr , td, th {
+    border: 1px solid rgb(63, 63, 70);
+}
+
+table {
+    width: 100%; 
+}
+
+th {
+    background-color: rgb(29, 38, 49);
+    height: 40px;
+}
+
+td {
+    padding: 12px;
+}
+
+td button {
+    margin-right: 20px;
+}

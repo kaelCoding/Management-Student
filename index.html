@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanlihs</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/table.css">
+    <link rel="stylesheet" href="/public/tag.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="homeClass">
+            <a href=""><h1>CLASSROOM</h1></a>
+        </div>
+
+        <div class="form_Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input oninput="searchStudent()" id="value_Search" type="text" placeholder="Tìm kiếm học sinh">
+        </div>
+
+        <nav>
+           <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">Lớp học</a></li>
+                <li><a href="">Liên hệ</a></li>
+           </ul>
+        </nav>
+    </header> 
+
+    <main>
+        <div class="classtop">
+            <h2>DANH SÁCH HỌC SINH</h2>
+            <button onclick="openPopup('CREATE')">Thêm học sinh</button>
+        </div>
+
+        <div class="container">
+            <table>
+                <tbody id="table">
+                    <tr>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Action</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div onclick="hidePopup()" class="overlay" id="PopupStudent">
+            <div class="formStudent" onclick="insideOverlay(event)">
+                <h1 style="text-align: center;">Student</h1>
+                <div>
+                    <label for=""><b>Email:</b></label> 
+                    <input oninput="Validation('EMAIL')" id="email" type="text" placeholder="Enter email">
+                    <span id="error_E"></span>
+                </div>
+    
+                <div>
+                    <label for=""><b>Name:</b></label>
+                    <input oninput="Validation('NAME')" id="name" type="text" placeholder="Enter name">
+                    <span id="error_N"></span>
+                </div>
+    
+                <div>
+                    <label for=""><b>Age:</b></label> <br>
+                    <input oninput="Validation('AGE')" id="age" type="text" placeholder="Enter age">
+                    <span id="error_A"></span>
+                </div>
+
+                <div class="btn-right">
+                    <button onclick="saveStudent()">Save</button>
+                </div>
+            </div>
+       </div>
+
+       <div onclick="hidePopup()" class="overlay" id="PopupDelStudent">
+            <div class="formdelStudent" onclick="insideOverlay(event)">
+                <h1 style="text-align: center;">Xác nhận</h1>
+                <div>Bạn có chắc chắn muốn xóa học sinh, hành động này không thể hoàn tác</div>
+                <div class="btn-right">
+                    <button onclick="saveStudent()">Xác nhận</button>
+                </div>
+            </div>
+       </div>
+
+       <div id="mess_Notification">
+            <div class="messStudent">
+                <h2>SUCCESS!</h2>
+                <p>Bạn đã thêm học sinh thành công</p>
+                <div class="btn-right">
+                    <button onclick="hideMess()">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="/scripts/stores.js"></script>
+    <script src="/scripts/dom.js"></script>
+
+    <script src="/scripts/popup.js"></script>
+    <script src="/scripts/validation.js"></script>
+    <script src="scripts/student.js"></script>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
